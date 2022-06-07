@@ -1,0 +1,60 @@
+.blog-header{
+    height: 5em;
+    background-color: black;
+    position:sticky;
+    top:0;
+}
+.headerlink{
+    align-items: center;
+    height: 3em;
+    width: auto;
+    
+}
+.header-img{
+    padding-top: 1em;
+    text-align: center;
+}
+.header-title{
+    padding-top: 1em;
+    text-align: center;
+    color: white;
+}
+.menu-position{
+    position:fixed !important;
+    top:5em;
+    height: 100%;
+    background-color: white;
+}
+ul>li{
+    list-style: none;
+    text-align: left;
+}
+.box-list{
+    text-decoration: none;
+    display: block;
+    color: black;
+    font-size: 20px;
+    padding-left: 2em;
+    padding-top: 0.7em;
+    padding-bottom: 0.7em;
+}
+.icons-mg{
+    margin-right: 1em;
+}
+.app-page{
+    height: 1000px;
+    background-color: #e4e5e6;
+}
+.page-main{
+    margin: 1em;
+    border-radius: 0.5em;
+    width: auto;
+    background-color: white;
+}
+.footer{
+    text-decoration: none;
+    margin-top: 2em;
+    bottom: 0;
+    height: 3em;
+    text-align: center;
+}
