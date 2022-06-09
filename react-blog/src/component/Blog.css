@@ -42,7 +42,6 @@ ul>li{
     margin-right: 1em;
 }
 .app-page{
-    height: 1000px;
     background-color: #e4e5e6;
 }
 .page-main{
@@ -58,3 +57,5 @@ ul>li{
     height: 3em;
     text-align: center;
 }
+
+

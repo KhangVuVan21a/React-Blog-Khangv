@@ -1,5 +1,9 @@
 .List-title{
-    margin: 1em;
+    padding-top: 0.7em;
+    padding-left: 1em;
+    background-color:#f0f3f5 ;
+    border-radius: 0.5em;
+    padding-bottom: 0.5em;
 }
 tr{
     text-align: center;
@@ -16,6 +20,68 @@ td,th{
     height: auto;
 }
 .blog-list{
+    padding-bottom: 1em;
+}
+.col-id{
+    width: 5%;
+}
+.col-title{
+    width: 20%;
+}
+.col-type{
+    width: 7%;
+}
+.col-public{
+    width: 8%;
+}
+.col-category{
+    width: 10%;
+}
+.col-position{
+    width: auto;
+}
+.col-datapublic{
+    width: 10%;
+}
+.col-edit{
+    width: 7%;
+}
+.col-delete{
+    width: 8%;
+}
+.main-blog-edit{
+    padding: 2em;
+}
+.label-public{
+    margin-right: 3em;
+}
+.form-type{
+    padding-right: 1em;
+}
+.blog-create-edit{
+    padding-bottom: 1em;
+}
+.border-title{
+    border-bottom: 2px solid black;
+}
+.form-submit{
+    padding-top: 3em;
+    
+    text-align: center;
+}
+.blog-search{
+    
+}
+.box-search{
+    padding-left: 4em;
+    padding-right: 5em;
     padding-top: 1em;
     padding-bottom: 1em;
+}
+.title-search{
+    padding-right: 4em;
+}
+.box-submit{
+    padding: 1em;
+    text-align: center;
 }

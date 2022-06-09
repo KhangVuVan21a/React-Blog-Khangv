@@ -16,7 +16,8 @@ export function AppPage() {
                     <div className='page-main'>
                         <Routes>
                             <Route path='/List' element={<BlogList/>} />
-                            <Route path='/New' element={<BlogCreateEdit/>} />
+                            <Route path='/New'  element={<BlogCreateEdit/>} />
+                            <Route path='/New/:id'  element={<BlogCreateEdit/>} />
                             <Route path='/Search' element={<BlogSearchForm/>} />
                         </Routes>
                     </div>
