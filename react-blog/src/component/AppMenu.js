@@ -22,7 +22,7 @@ export function BlogMenu() {
                         </a>
                     </li>
                     <li>
-                        <a className='box-list' href='/New'>
+                        <a className='box-list' href='/New/'>
                             <GoDiffAdded className='icons-mg'/>
                             New
                         </a>

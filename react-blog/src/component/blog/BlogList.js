@@ -4,7 +4,7 @@ import 'react-bootstrap'
 import { Button, Table } from 'react-bootstrap';
 import './blogList.css'
 import blogsAxios from '../../axios';
-import { useEffect, useState } from 'react';
+import { Component, useEffect, useState } from 'react';
 import React from 'react';
 import { Link } from 'react-router-dom';
 export function BlogList() {
@@ -34,6 +34,13 @@ export function BlogList() {
             })
             .catch(error => console.log(error));
     }
+    function deleteJsonById(id) {
+        blogsAxios.delete(`http://localhost:3000/blogs/` + id)
+            .then(res => {
+                console.log(id);
+            })
+            .catch(error => console.log(error));
+    }
     useEffect(() => {
         console.log(id);
     }, [id]);
@@ -50,11 +57,15 @@ export function BlogList() {
                         <td className='col-datapublic'>{val.data_pubblic}</td>
 
                         <td className='col-edit'>
-                            <Link to={'/New/'+id}>
+                            <Link to={'/New/' + id}>
                                 <button type="button" className="btn btn-outline-primary" value={val.id} onFocus={(e) => { setId(e.target.value); }}>Edit</button>
                             </Link>
                         </td>
-                        <td className='col-delete'><button type="button" className="btn btn-outline-danger">Delete</button></td>
+                        <td className='col-delete'>
+                            <Link to={'/List'}>
+                                <button type="submit" className="btn btn-outline-danger" value={val.id} onClick={(e) => { deleteJsonById(e.target.value); window.location.reload()}}>Delete</button>
+                            </Link>
+                        </td>
                     </tr>
                 )
             })
