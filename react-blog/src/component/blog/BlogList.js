@@ -28,14 +28,14 @@ export function BlogList() {
         return (<p>{listCategory[category]}</p>);
     }
     function GetJsonToTable() {
-        blogsAxios.get("")
+        blogsAxios.get("http://localhost:8083/Blog/findall")
             .then(res => {
                 setBlogList(res.data);
             })
             .catch(error => console.log(error));
     }
     function deleteJsonById(id) {
-        blogsAxios.delete(`http://localhost:3000/blogs/` + id)
+        blogsAxios.delete(`http://localhost:8083/Blog/deletebyid/` + id)
             .then(res => {
                 console.log(id);
             })

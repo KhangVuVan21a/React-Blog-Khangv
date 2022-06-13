@@ -7,12 +7,10 @@ import {BsSearch} from 'react-icons/bs'
 import React, { useEffect, useState } from 'react';
 import './Blog.css'
 const contextmenu='List';
-function changeContext(context){
-}
 export function BlogMenu() {
     const [context,setContext]=useState('List');
     return (
-        <div className='col-2 menu-position'>
+        <div className='col-2 menu-position '>
             <div className=''>
                 <ul className='p-0 flex-column'>
                     <li>

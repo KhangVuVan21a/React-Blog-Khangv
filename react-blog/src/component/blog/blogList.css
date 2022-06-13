@@ -16,6 +16,9 @@ td,th{
     border: 1px solid rgb(194, 184, 184);
     text-align: center;
 }
+td{
+    padding-top: 2em;
+}
 .btn{
     height: auto;
 }

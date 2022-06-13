@@ -59,7 +59,7 @@ function BlogList(props) {
        
     },[props.text])
     function getJsonToTable() {
-        blogsAxios.get("")
+        blogsAxios.get("http://localhost:8083/Blog/findall")
             .then(res => {
                 setBlogList(res.data);
             })
@@ -79,7 +79,7 @@ function BlogList(props) {
         return (<p>{listCategory[category]}</p>);
     }
     function deleteJsonById(id) {
-        blogsAxios.delete(`http://localhost:3000/blogs/` + id)
+        blogsAxios.delete(`http://localhost:8083/Blog/deletebyid/` + id)
             .then(res => {
                 console.log(id);
             })
@@ -95,7 +95,7 @@ function BlogList(props) {
                     <td className='col-category'>{getcategory(val.category)}</td>
                     <td className='col-public'>{isPublic(val.public)}</td>
                     <td className='col-position'>{findposition(val.position)}</td>
-                    <td className='col-datapublic'>{val.data_pubblic}</td>
+                    <td className='col-datapublic'>{val.datapublic}</td>
 
                     <td className='col-edit'>
                         <Link to={'/New/' + id}>

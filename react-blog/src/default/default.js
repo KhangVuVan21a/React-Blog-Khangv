@@ -4,6 +4,7 @@ import './default.css'
 import { BlogHeader } from '../component/AppHeader';
 import { BlogMenu } from '../component/AppMenu';
 import { AppPage } from '../component/AppPage';
+import { AppFooter } from '../component/AppFooter';
 
 export function Default(){
     return(
@@ -11,6 +12,7 @@ export function Default(){
             <BlogHeader/>
             <BlogMenu/>
             <AppPage/>
+            <AppFooter/>
         </div>
     )
 }
