@@ -6,13 +6,15 @@ import { BlogMenu } from '../component/AppMenu';
 import { AppPage } from '../component/AppPage';
 import { AppFooter } from '../component/AppFooter';
 
-export function Default(){
-    return(
-        <div className='layoutdefault'>
-            <BlogHeader/>
-            <BlogMenu/>
-            <AppPage/>
-            <AppFooter/>
-        </div>
+export function Default() {
+    return (
+        <>
+            <div className='layoutdefault'>
+                <BlogHeader />
+                <BlogMenu />
+                <AppPage />
+                <AppFooter />
+            </div>
+        </>
     )
 }

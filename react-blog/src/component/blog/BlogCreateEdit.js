@@ -21,14 +21,16 @@ export function BlogCreate() {
     });
     //create data or update by id
     const onSubmit = data => {
-       // if (id == null) {
-            axios.post(`http://localhost:8083/Blog/create`, data)
-                .then(res => {
-                    console.log(data);
-                    console.log(res.data);
+        if(isValidate()){
+        // if (id == null) {
+        axios.post(`http://localhost:8083/Blog/create`, data)
+            .then(res => {
+                console.log(data);
+                console.log(res.data);
 
-                })
-
+            })
+            alert("created!")
+        }
         // } else {
         //     axios.put(`http://localhost:3000/blogs/` + id, logBlog)
         //         .then(res => {
@@ -36,8 +38,39 @@ export function BlogCreate() {
         //             console.log(logBlog);
         //             alert("updated data")
         //         })
-         //}
+        //}
     };
+    function isValidate(){
+        console.log(document.getElementById("datapublic").value)
+        if((!document.getElementById("checkBoxVietNam").checked&&
+        !document.getElementById("checkBoxChauA").checked&&
+        !document.getElementById("checkBoxChauAu").checked&&
+        !document.getElementById("checKBoxChauMy").checked)){
+            alert("Position must not null");
+            return false;
+        }
+        if(document.getElementById("titleInput").value.length <=0){
+            alert("Title must not null");
+            return false;
+        }
+        if(document.getElementById("desInput").value.length<=0){
+            alert("Des must not null");
+            return false;
+        }
+        if(document.getElementById('detailInput').value.length<=0){
+            alert("Detail must not null");
+            return false;
+        }
+        if(document.getElementById('inputFile').value.length<=0){
+            alert("Thumbs must not null");
+            return false;
+        }
+        if(document.getElementById("datapublic").value==''){
+            alert("datapublic must not null");
+            return false;
+        }
+        return true;
+    }
     // 
     // function getDataById() {
     //     axios.get(`http://localhost:3000/blogs/` + id)
@@ -76,7 +109,7 @@ export function BlogCreate() {
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div className='form-group mt-3' >
                         <label htmlFor="titleInput">Tiêu đề: </label>
-                        <input {...register("title", { minLength: 10 })} className="form-control" type="text" id='titleInput' defaultValue={logBlog.title} onChange={(e) => { logBlog.title = e.target.value }} />
+                        <input {...register("title")} className="form-control" type="text" id='titleInput' defaultValue={logBlog.title} onChange={(e) => { logBlog.title = e.target.value }} />
                     </div>
                     <div className='form-group mt-3'>
                         <label htmlFor="desInput">Mô tả ngắn: </label>
@@ -137,7 +170,7 @@ export function BlogCreate() {
                         </div>
                     </div>
                     <div className='form-group form-submit'>
-                        <button type="submit" className="btn btn-success m-2" >Submit</button>
+                        <button type="submit" className="btn btn-success m-2">Submit</button>
                         <button type="button" className="btn btn-primary">Clear</button>
                     </div>
 
@@ -163,12 +196,46 @@ export function BlogCreateEdit() {
     });
     const [test, setTest] = useState();
     const onSubmit = data => {
+        if(isValidate()){
         axios.put(`http://localhost:8083/Blog/update/` + id, logBlog)
             .then(res => {
                 console.log(logBlog);
                 console.log(logBlog);
             })
+
+            alert("updated");
+        }
     };
+    function isValidate(){
+        if((!document.getElementById("checkBoxVietNam").checked&&
+        !document.getElementById("checkBoxChauA").checked&&
+        !document.getElementById("checkBoxChauAu").checked&&
+        !document.getElementById("checKBoxChauMy").checked)){
+            alert("Position must not null");
+            return false;
+        }
+        if(document.getElementById("titleInput").value.length <=0){
+            alert("Title must not null");
+            return false;
+        }
+        if(document.getElementById("desInput").value.length<=0){
+            alert("Des must not null");
+            return false;
+        }
+        if(document.getElementById('detailInput').value.length<=0){
+            alert("Detail must not null");
+            return false;
+        }
+        if(document.getElementById('inputFile').value.length<=0){
+            alert("Thumbs must not null");
+            return false;
+        }
+        if(document.getElementById("datapublic").value==null){
+            alert("datapublic must not null");
+            return false;
+        }
+        return true;
+    }
     function getDataById() {
         axios.get(`http://localhost:8083/Blog/findbyid/` + id)
             .then(res => {
@@ -236,7 +303,7 @@ export function BlogCreateEdit() {
                     <div className='form-group mt-3'>
                         <label htmlFor="inputFile">Example file input</label>
                         <br></br>
-                        <input {...register("thumbs", { minLength: 10 })} type="text" className="form-control" id="inputFile" defaultValue={logBlog.thumbs} onChange={(e) => { logBlog.thumbs = e.target.value }} />
+                        <input {...register("thumbs")} type="text" className="form-control" id="inputFile" defaultValue={logBlog.thumbs} onChange={(e) => { logBlog.thumbs = e.target.value }} />
                     </div>
                     <div className='form-group mt-3'>
                         <div className="form-check form-check-inline">
